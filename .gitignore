@@ -1,3 +1,5 @@
+/front-increase/node_modules
+/front-increase/dist
 # Logs
 logs
 *.log
