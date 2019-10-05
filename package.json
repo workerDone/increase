@@ -1,0 +1,11 @@
+{
+    "name": "increase",
+    "version": "0.0.1",
+    "description": "",
+    "author": "Chmut Mykola",
+    "license": "MIT",
+    "scripts": {
+        "start": "node back-increase/dist/main.js"
+    }
+  }
+  
