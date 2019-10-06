@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { ApiService } from 'src/app/core/service/api.service';
 
@@ -8,15 +9,28 @@ import { ApiService } from 'src/app/core/service/api.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  loginForm: FormGroup;
   constructor(
-    private apiService: ApiService
+    private apiService: ApiService,
+    private fb: FormBuilder,
   ) { }
 
   ngOnInit() {
+    this.loginForm = this.fb.group({
+      firstName: [''],
+      lastName: ['']
+    });
   }
 
-  getUserById() {
-    this.apiService.get('user/1').subscribe((e)=> console.log(e, 333333333))
+  isValid( name: string ): boolean {
+    let control = null;
+    if (this.loginForm) {
+      control = this.loginForm.get(name);
+    }
+    if (control) {
+      return control.valid || !control.touched;
+    } else {
+      return true;
+    }
   }
 }

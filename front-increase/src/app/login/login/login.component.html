@@ -1,2 +1,8 @@
-<p>login works!</p>
-<button (click)="getUserById()">click</button>
+<div class="container">
+    <form [formGroup]="loginForm">
+        <dx-text-box [formControlName]="'firstName'" [isValid]="isValid('firstName')" [showClearButton]="'true'">
+        </dx-text-box>
+        <dx-text-box [formControlName]="'lastName'" [isValid]="isValid('lastName')" [showClearButton]="'true'">
+        </dx-text-box>
+    </form>
+</div>
