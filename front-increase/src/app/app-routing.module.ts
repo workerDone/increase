@@ -8,8 +8,8 @@ const routes: Routes = [
     loadChildren: './login/login.module#LoginModule'
   },
   {
-    path: 'registration',
-    loadChildren: './registration/registration.module#RegistrationModule'
+    path: 'user',
+    loadChildren: './user/user.module#UserModule'
   }
 ];
 

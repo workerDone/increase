@@ -1,0 +1,22 @@
+<div class="container content">
+    <form #form="ngForm" (submit)="submitForm($event)">
+      <dx-form [(formData)]="registration" labelLocation="top" [minColWidth]="233">
+        <dxi-item itemType="group" colCount="2">
+          <dxi-item text="First Name" dataField="firstName">
+          </dxi-item>
+          <dxi-item text="Last Name" dataField="lastName"></dxi-item>
+        </dxi-item>
+        <dxi-item text="Email" dataField="email"></dxi-item>
+        <dxi-item itemType="group" colCount="2">
+          <dxi-item text="Password" dataField="password">
+          </dxi-item>
+          <dxi-item text="Confirm" dataField="confirm"></dxi-item>
+        </dxi-item>
+        <dxi-item>
+          <dx-button [useSubmitBehavior]="true" stylingMode="outlined" text="Save" type="normal"
+            [width]="120">
+          </dx-button>
+        </dxi-item>
+      </dx-form>
+    </form>
+  </div>
