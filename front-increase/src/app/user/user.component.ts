@@ -9,7 +9,7 @@ import { UserApiService } from './service/user-api.service';
 })
 export class UserComponent implements OnInit {
 
-  registration = {
+  user = {
     firstName: null,
     lastName: null,
     email: null,
@@ -24,6 +24,6 @@ export class UserComponent implements OnInit {
   ngOnInit() { }
 
   submitForm(event: any) {
-    console.log(this.registration, event)
+    this.userApiService.add(this.user).subscribe((e)=> console.log(e, 22222222))
   }
 }
