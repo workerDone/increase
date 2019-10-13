@@ -25,6 +25,9 @@ let UserController = class UserController {
     findById(id) {
         return this.userService.findById(id);
     }
+    deleteById(id) {
+        return this.userService.deleteById(id);
+    }
     save(user) {
         console.log(user);
         return this.userService.save(user);
@@ -43,6 +46,13 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findById", null);
+__decorate([
+    common_1.Post(':id'),
+    __param(0, common_1.Param('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "deleteById", null);
 __decorate([
     common_1.Post(),
     __param(0, common_1.Body()),

@@ -12,8 +12,14 @@ export class User {
   lastName: string;
 
   @Column()
+  password: string;
+
+  @Column()
+  email: string;
+
+  @Column({ default: null })
   gender: string;
 
-  @Column('int')
+  @Column({ default: null })
   age: number;
 }

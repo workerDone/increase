@@ -1,6 +1,7 @@
 import { Controller, Get, Param, Post, Body, HttpCode } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User } from './user.entity';
+import { DeleteResult } from 'typeorm';
 
 @Controller('user')
 export class UserController {
@@ -14,6 +15,11 @@ export class UserController {
   @Get(':id')
   findById(@Param('id') id: number): Promise<User> {
     return this.userService.findById(id);
+  }
+
+  @Post(':id')
+  deleteById(@Param('id') id: number): Promise<DeleteResult> {
+    return this.userService.deleteById(id);
   }
 
   @Post()

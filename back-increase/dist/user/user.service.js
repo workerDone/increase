@@ -29,6 +29,9 @@ let UserService = class UserService {
     async findById(id) {
         return await this.userRepository.findOne(id);
     }
+    async deleteById(id) {
+        return await this.userRepository.delete(id);
+    }
 };
 UserService = __decorate([
     common_1.Injectable(),
