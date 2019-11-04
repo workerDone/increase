@@ -7,6 +7,7 @@ import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
+import { LanguageModule } from './language/language.module';
 
 @Module({
   imports: [
@@ -15,21 +16,23 @@ import { UserModule } from './user/user.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: "db4free.net",
-      username: "mykola_chmut",
-      password: "mykola_chmut",
-      database: 'mykola_chmut',
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true
-      // host: 'localhost',
-      // port: 3306,
-      // username: 'root',
-      // password: 'root',
-      // database: 'test',
+      // host: "db4free.net",
+      // username: "mykola_chmut",
+      // password: "mykola_chmut",
+      // database: 'mykola_chmut',
       // entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      // synchronize: true,
+      // synchronize: true
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'password',
+      database: 'test',
+      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      synchronize: true,
+      insecureAuth : true,
     }),
-    UserModule
+    UserModule,
+    LanguageModule,
   ],
   controllers: [AppController],
   providers: [AppService],

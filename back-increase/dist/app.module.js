@@ -13,6 +13,7 @@ const path_1 = require("path");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const user_module_1 = require("./user/user.module");
+const language_module_1 = require("./language/language.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -23,14 +24,17 @@ AppModule = __decorate([
             }),
             typeorm_1.TypeOrmModule.forRoot({
                 type: 'mysql',
-                host: "db4free.net",
-                username: "mykola_chmut",
-                password: "mykola_chmut",
-                database: 'mykola_chmut',
+                host: 'localhost',
+                port: 3306,
+                username: 'root',
+                password: 'password',
+                database: 'test',
                 entities: [__dirname + '/**/*.entity{.ts,.js}'],
-                synchronize: true
+                synchronize: true,
+                insecureAuth: true,
             }),
-            user_module_1.UserModule
+            user_module_1.UserModule,
+            language_module_1.LanguageModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
