@@ -5,10 +5,10 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column('text')
+  @Column({ default: null })
   firstName: string;
 
-  @Column()
+  @Column({ default: null })
   lastName: string;
 
   @Column()
@@ -22,4 +22,10 @@ export class User {
 
   @Column({ default: null })
   age: number;
+
+  @Column({ default: false })
+  confirmed: boolean;
+
+  @Column({ default: null })
+  login: string;
 }
